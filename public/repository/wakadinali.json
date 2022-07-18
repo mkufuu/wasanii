@@ -4,20 +4,29 @@
         "age": 27,
         "name": "Scar",
         "image": "images/wakadinali/scar-mkadinali.jpg",
-        "bestLine": "matwa twa msupa wako akipewa kiboko..."
+        "bestLine": {
+            "song": "Geng Inengi",
+            "quote": "matwa twa msupa wako akipewa kiboko..."
+        }
     },
     {
         "_id": 123456789,
         "age": 30,
         "name": "Domani Munga",
         "image": "images/wakadinali/munga-mkadinali.jpg",
-        "bestLine": "Mad Munga mjinga niko zone..."
+        "bestLine": {
+            "song": "Geng Inengi",
+            "quote": "Mad Munga mjinga niko zone..."
+        }
     },
     {
         "_id": 987654689,
         "age": 28,
         "name": "Sewersydaa",
         "image": "images/wakadinali/sewersydaa-mkadinali.jpg",
-        "bestLine": "Tunaguza bila ruhusa..."
+        "bestLine": {
+            "song": "Geng Inengi",
+            "quote": "Tunaguza bila ruhusa..."
+        }
     }
 ]

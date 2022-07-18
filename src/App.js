@@ -21,8 +21,8 @@ const App = () => {
     }, []);
 
     return <div className="app">
-        <header className="app-header">
-            <h1>Wasanii</h1>
+        <header className="py-5 mb-3 d-flex justify-content-center align-items-center" style={{backgroundColor: 'blanchedalmond'}}>
+            <h1 className="display-1">Wasanii</h1>
         </header>
 
         <Colony name="Wakadinali" artists={wakadinali} />

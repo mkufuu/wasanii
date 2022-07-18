@@ -1,15 +1,20 @@
 import Artist from "./Artist";
 
 const Colony = ({name, artists}) => {
-    return <section className="colony">
-        <header>
-            <h3>{name}</h3>
+    return <section className="colony py-3">
+        <header className="mb-5 text-center">
+            <h2>{name}</h2>
+            <p class="text-muted">Music Group</p>
         </header>
 
-        <main>
+        <main class="container-fluid">
+            <div class="row">
             {
-                artists.map((item) => <Artist {...item}/>)
+                artists.map((item, index) => <div key={item?._id || index} class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2">
+                    <Artist {...item}/>
+                </div>)
             }
+            </div>
         </main>
     </section>
 }
