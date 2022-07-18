@@ -1,29 +1,32 @@
 import './App.css';
-import Artist from './Artist';
+import Colony from './components/Colony';
+import { useState, useEffect } from 'react';
 
-const artists = [
-    { _id: 234567890, name: 'Scar', image: 'Scar-Mkadinali-RbeVVolm.jpg', age: 27, bestLine: 'matwa twa msupa wako akipewa kiboko...'},
-    { _id: 987654689, name: 'Sewer sydr',  image: 'Scar-Mkadinali-RbeVVolm.jpg', age: 28, bestLine: 'Tunaguza bila ruhusa...'},
-    { _id: 123456789, name: 'Mad Munga',  image: 'Scar-Mkadinali-RbeVVolm.jpg', age: 30, bestLine: 'Mad Munga mjinga niko zone...'},
-    { _id: 456789654, name: 'Dyan Code',  image: 'Scar-Mkadinali-RbeVVolm.jpg', age: 29, bestLine: '...Napenda a guy like Kanyari...he getting that paper..'},
-];
+const App = () => {
+    const [wakadinali, setWakadinali] = useState([]);
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Wakadinali</h1>
-      </header>
+    useEffect(() => {
+        const fetchWakadinali = async () => {
+            try {
+                const response = await window.fetch('repository/wakadinali.json');
+                const jsonData = await response.json();
 
-      <main>
-        {
-            artists.map(({_id, name, age, image, bestLine}) => {
-                return <Artist key={_id} image={image} name={name} age={age} bestLine={bestLine} />
-            })
+                setWakadinali(jsonData);
+            } catch (error) {
+                setWakadinali([]);
+            }
         }
-      </main>
-    </div>
-  );
+
+        fetchWakadinali();
+    }, []);
+
+    return <div className="app">
+        <header className="app-header">
+            <h1>Wasanii</h1>
+        </header>
+
+        <Colony name="Wakadinali" artists={wakadinali} />
+    </div>;
 }
 
 export default App;
